@@ -1,12 +1,5 @@
 import Link from 'next/link';
 
-const links = [
-  { href: '//github.com/create-next-app/create-next-app', label: 'Github' }
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-});
-
 const Nav = () => (
   <nav>
     <ul>
@@ -15,42 +8,42 @@ const Nav = () => (
           <a>Home</a>
         </Link>
       </li>
-      <ul>
-        {links.map(
-          ({ key, href, label }) => (
-            <li key={key}>
-              <Link href={href}>
-                <a>{label}</a>
-              </Link>
-            </li>
-          )
-        )}
-      </ul>
+      <li>
+        <Link href="/recipes">
+          <a>Recipes</a>
+        </Link>
+      </li>
     </ul>
 
     <style jsx>{`
       :global(body) {
         margin: 0;
-        font-family: -apple-system,BlinkMacSystemFont,Avenir Next,Avenir,Helvetica,sans-serif;
       }
       nav {
+        width: 100%;
         text-align: center;
+        background-color: black;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      nav a {
+        color: white;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 1rem;
+        text-transform:uppercase;
+        padding: 0.5rem;
       }
       ul {
         display: flex;
-        justify-content: space-between;
       }
       nav > ul {
         padding: 4px 16px;
       }
+
       li {
         display: flex;
         padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
       }
     `}</style>
   </nav>

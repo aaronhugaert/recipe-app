@@ -2,33 +2,20 @@ import Link from 'next/link';
 import Head from '../components/head';
 import Nav from '../components/nav';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLemon } from '@fortawesome/free-solid-svg-icons'
+
 export default () => (
-  <div>
-    <Head title="Home" />
+  <div class="container" className="container">
     <Nav />
-    <div className="hero">
-      <h1 className="title">Welcome to Create Next App (Create Next.js App building tools)</h1>
-      <p className="description">To get started, edit <code>pages/index.js</code> and save to reload.</p>
-      <div className="row">
-        <Link href="//nextjs.org/docs/">
-          <a className="card">
-            <h3>Getting Started &rarr;</h3>
-            <p>Learn more about Next.js on official website</p>
-          </a>
-        </Link>
-        <Link href="//github.com/create-next-app/create-next-app">
-          <a className="card">
-            <h3>Create Next App&rarr;</h3>
-            <p>Was this tools helpful?</p>
-          </a>
-        </Link>
-      </div>
+    <div>
+      <h1 className="title">Snappy Recipes <FontAwesomeIcon icon={faLemon} style={{color: "#f7c307"}}/></h1>
+      <p className="description">With a zingy lemon twist</p>
     </div>
 
     <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
+      .svg {
+        color: #ffd600;
       }
       .title {
         margin: 0;
@@ -37,38 +24,11 @@ export default () => (
         padding-bottom: 12px;
         line-height: 1.15;
         font-size: 37px;
+        font-weight: 700;
+        text-tranfsorm: uppercase;
       }
       .title, .description {
         text-align: center;
-      }
-      .row {
-        max-width: 587px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9B9B9B;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
       }
     `}</style>
   </div>
