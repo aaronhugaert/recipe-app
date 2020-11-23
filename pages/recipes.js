@@ -1,10 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { fetchContent } from '../utils/contentful';
 import Nav from '../components/nav';
+import Footer from '../components/footer';
 import Link from 'next/link';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDollarSign, faUtensils, faClock, faUsers} from '@fortawesome/free-solid-svg-icons'
+import { faDollarSign, faClock, faUsers} from '@fortawesome/free-solid-svg-icons'
 
 import { Card, Badge, ListGroup } from 'react-bootstrap'
 
@@ -59,7 +60,7 @@ function RecipesPage({ recipeCollection }) {
 return (
       <div className="container">
         <Nav />
-        <div className="recipes">
+        <div className="recipes content">
             {recipeCollection.map((recipe, index) => (
                 <div key={index} className="recipe">
                     <Card>
@@ -80,7 +81,7 @@ return (
                             </li>
                             <li className="list-group-item">
                               <div className="recipe-info">
-                                <p>Difficulty: {recipe.difficulty}</p>
+                                <p>{recipe.difficulty}</p>
                                 <div className="price-icons">
                                   {[...Array(5),].map((value, index) => (
                                     <FontAwesomeIcon key={index} icon={faDollarSign} style={{color: index < recipe.price ? "#f7c307" : "#adadad", marginRight: "0.2rem"}}/>
@@ -105,7 +106,7 @@ return (
                 </div>
             ))}
         </div>
-        
+        <Footer />
         <style jsx>{`
             .card-body {
               padding-bottom: 0rem;
@@ -124,27 +125,6 @@ return (
               padding-bottom: 0.4rem;
             }
 
-            .author {
-              display: flex;
-            }
-
-            .author div {
-              display: flex;
-              align-items: center;
-            }
-
-            .author * {
-              color: #6c757d;
-              margin: 0;
-              font-weight: 700;
-            }
-
-            .author img {
-              width: 3rem;
-              margin-right: 2rem;
-              border-radius: 50%;
-            }
-
             .recipe-info p, .recipe-info * {
               color: #6c757d;
               font-size: 0.9rem;
@@ -155,21 +135,6 @@ return (
 
             .price-icons * {
               margin-right: 0.1rem;
-            }
-
-            .tags {
-              display: flex;
-              align-items: flex-start;
-              margin-top: 0.2rem;
-            }
-
-            .tags .badge {
-              display: flex;
-              margin: 0.1rem;
-            }
-
-            .tags .badge:first-child {
-              margin-left: 0;
             }
 
             .btn-primary, .btn-primary.active, .btn-primary:focus  {

@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Head from '../components/head';
 import Nav from '../components/nav';
+import Footer from '../components/footer';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLemon } from '@fortawesome/free-solid-svg-icons'
@@ -8,11 +8,11 @@ import { faLemon } from '@fortawesome/free-solid-svg-icons'
 export default () => (
   <div class="container" className="container">
     <Nav />
-    <div>
+    <div className="content">
       <h1 className="title">Snappy Recipes <FontAwesomeIcon icon={faLemon} style={{color: "#f7c307"}}/></h1>
       <p className="description">With a zingy lemon twist</p>
     </div>
-
+    <Footer />
     <style jsx>{`
       .svg {
         color: #ffd600;

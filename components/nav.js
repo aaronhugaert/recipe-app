@@ -25,7 +25,9 @@ const Nav = () => (
         background-color: black;
         padding-left: 1rem;
         padding-right: 1rem;
+        margin-bottom: 1.5rem;
       }
+
       nav a {
         color: white;
         font-weight: 500;
@@ -34,8 +36,10 @@ const Nav = () => (
         text-transform:uppercase;
         padding: 0.5rem;
       }
+
       ul {
         display: flex;
+        margin: 0;
       }
       nav > ul {
         padding: 4px 16px;
