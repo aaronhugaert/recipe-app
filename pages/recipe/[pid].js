@@ -19,9 +19,13 @@ export async function getStaticPaths() {
     }
   `);
 
-  const paths = response.recipeCollection.items.map((slug) => ({
-    params: { pid: slug.slug },
-  }))
+  const paths = [];
+  if(response)
+  {
+    const paths = response.recipeCollection.items.map((slug) => ({
+      params: { pid: slug.slug },
+    }))
+  }
 
   return { paths, fallback: false }
 }
@@ -118,7 +122,7 @@ function RecipePage({ recipe }) {
                     <p>{recipe.author.firstName + " " + recipe.author.lastName }</p>
                   </div>
                 </li>
-                
+
               </ul>
             
             </div>
