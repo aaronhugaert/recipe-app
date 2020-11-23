@@ -19,14 +19,10 @@ export async function getStaticPaths() {
     }
   `);
 
-  const paths = [];
-  if(response)
-  {
-    const paths = response.recipeCollection.items.map((slug) => ({
-      params: { pid: slug.slug },
-    }))
-  }
-
+  const paths = response.recipeCollection.items.map((slug) => ({
+    params: { pid: slug.slug },
+  }))
+  
   return { paths, fallback: false }
 }
 
