@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { fetchContent } from '../../utils/contentful';
 
 import Nav from '../../components/nav';
+import Head from '../../components/head';
 import ReactMarkdown from 'react-markdown'
 import Footer from '../../components/footer';
 
@@ -78,6 +79,7 @@ export async function getStaticProps(context) {
 function RecipePage({ recipe }) {
     return (
       <div className="container">
+          <Head />
           <Nav />
           <article className="recipe-container content">
             <h1>{recipe.title}</h1>
