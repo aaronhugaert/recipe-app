@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import Nav from '../components/nav';
 import Footer from '../components/footer';
-import Header from '../components/header';
+import Head from '../components/head';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLemon } from '@fortawesome/free-solid-svg-icons'
 
 export default () => (
   <div class="container" className="container">
-    <Header />
+    <Head />
     <Nav />
     <div className="content">
       <h1 className="title">Snappy Recipes <FontAwesomeIcon icon={faLemon} style={{color: "#f7c307"}}/></h1>
