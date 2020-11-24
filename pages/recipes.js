@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { fetchContent } from '../utils/contentful';
 import Nav from '../components/nav';
 import Footer from '../components/footer';
+import Head from '../components/head';
 import Link from 'next/link';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -59,6 +60,7 @@ export async function getStaticProps() {
 function RecipesPage({ recipeCollection }) {
 return (
       <div className="container">
+        <Head />
         <Nav />
         <div className="recipes content">
             {recipeCollection.map((recipe, index) => (
